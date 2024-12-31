@@ -1,0 +1,292 @@
+/*
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4c5c96, #1e2a47);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.signup-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/649/139/small/abstract-fingerprint-scanning-encryption-to-login-cyber-security-icons-on-blue-background-modern-futuristic-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup-box:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay 
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.signup-box * {
+    position: relative;
+    z-index: 2; /* Keeps content above the overlay 
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4caf50, #3e8e41);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #45a049, #367c3a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:focus {
+    outline: 2px solid #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.back-button {
+    margin-top: 15px;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.back-button a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 14px;
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .signup-box {
+        width: 80%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+*/
+/* General Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #2c3e50, #34495e); /* Dark gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 35px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Glass effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.login-box:hover {
+    transform: translateY(-10px); /* Floating effect on hover */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.textbox {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.textbox label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    font-size: 16px;
+    background: transparent;
+    color: #ecf0f1;
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
+}
+
+.textbox input:focus {
+    outline: none;
+    border-color: #f39c12;
+    background: #34495e;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background-color: #f39c12;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+}
+
+.back-button {
+    margin-top: 15px;
+}
+
+.back-button button {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button button:hover {
+    color: #f39c12;
+    transform: translateY(-2px);
+}

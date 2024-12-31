@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Fashion Store</title>
+    <link rel="stylesheet" href="payment.css">
+    <script>
+        function confirmOrder(event) {
+            event.preventDefault(); // Prevent form submission for demo
+            alert("Your order has been successfully placed! Thank you for shopping with us.");
+            window.location.href = "placed.html"; // Redirect to homepage
+        }
+    </script>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="logo">FashionStore</div>
+            <ul>
+                <li><a href="index1.html" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="offer.html">Offers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Payment Form Section -->
+    <main class="payment">
+        <h2>Complete Your Payment</h2>
+        <form id="payment-form" onsubmit="confirmOrder(event)">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required aria-label="Full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+            </div>
+
+            <div class="form-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX" required aria-label="Card number">
+            </div>
+
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="month" id="expiry-date" name="expiry-date" required aria-label="Expiry date">
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="XXX" required aria-label="CVV">
+            </div>
+
+            <button type="submit" class="submit-btn">Pay Now</button>
+        </form>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Fashion Store. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/" aria-label="Visit us on Facebook">Facebook</a></li>
+                <li><a href="https://www.instagram.com/" aria-label="Visit us on Instagram">Instagram</a></li>
+                <li><a href="https://twitter.com/" aria-label="Visit us on Twitter">Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="payment.js"></script>
+</body>
+</html>

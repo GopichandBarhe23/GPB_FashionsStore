@@ -1,0 +1,149 @@
+/* Google Font for improved typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero1 {
+    position: relative;
+    background: url('https://example.com/your-image.jpg') no-repeat center center/cover; /* Add your image URL here */
+    height: 500px;
+    color: rgb(18, 19, 18);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero1 h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero1 p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Countdown Timer */
+.countdown {
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Main Offers Section */
+.offers {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.offer-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+.offer-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.offer-card h3 {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.offer-card p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.offer-card .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.offer-card .btn:hover {
+    background-color: #cc5200;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .hero1 h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero1 p {
+        font-size: 1.2rem;
+    }
+
+    .offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero1 h1 {
+        font-size: 2rem;
+    }
+
+    .hero1 p {
+        font-size: 1rem;
+    }
+
+    .offer-card {
+        width: 90%;
+    }
+
+    .countdown {
+        font-size: 1.5rem;
+    }
+}

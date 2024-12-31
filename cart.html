@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <style>
+        /* General styling for the navigation bar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333; /* Dark background */
+            color: white;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Highlight on hover */
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #444;
+                padding: 10px 0;
+                z-index: 10;
+            }
+
+            nav ul.show {
+                display: flex; /* Display links when toggled */
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger menu on small screens */
+            }
+        }
+    </style>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav aria-label="Main Navigation">
+        <div class="logo">FashionStore</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index1.html" class="active">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="offer.html">Offer Zone</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pp.html">Privacy Policy</a></li>
+            <li><a href="help.html">Help Centre</a></li>
+            <li><a href="signup.html">Sign-up</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Function to toggle the navigation menu on small screens
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .cart-container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .cart-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .cart-item-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .cart-item h3 {
+            margin: 0;
+        }
+        .cart-item p {
+            margin: 5px 0;
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .total-price {
+            text-align: right;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .checkout {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .checkout button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h1 class="cart-title">Your Shopping Cart</h1>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="total-price" id="total-price">Total: $0.00</div>
+        <div class="checkout">
+            <a href="payment.html"><button id="checkout">Proceed to Checkout</button></a>
+            <a href="index1.html"><button id="Back to Homepage">Back To Homepage</button></a>
+        </div>
+    </div>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    
+        function renderCart() {
+            const cartItems = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            cartItems.innerHTML = "";
+            let totalPrice = 0;
+    
+            Object.values(cart).forEach(product => {
+                const subtotal = product.price * product.quantity;
+                totalPrice += subtotal;
+    
+                const item = document.createElement("div");
+                item.classList.add("cart-item");
+                item.innerHTML = `
+                    <div class="cart-item-details">
+                        <h3>${product.name}</h3>
+                        <p>Price: $${subtotal.toFixed(2)}</p>
+                        <div class="quantity-control">
+                            <button class="decrease" data-id="${product.id}">-</button>
+                            <span>${product.quantity}</span>
+                            <button class="increase" data-id="${product.id}">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-item" data-id="${product.id}">Remove</button>
+                `;
+                cartItems.appendChild(item);
+            });
+    
+            // Update total price
+            totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
+            attachEventListeners();
+        }
+    
+        function attachEventListeners() {
+            document.querySelectorAll(".increase").forEach(button =>
+                button.addEventListener("click", (e) => {
+                    const id = e.target.dataset.id;
+                    cart[id].quantity++;
+                    updateCart();
+                })
+            );
+    
+            document.querySelectorAll(".decrease").forEach(button =>
+                button.addEventListener("click", (e) => {
+                    const id = e.target.dataset.id;
+                    if (cart[id].quantity > 1) {
+                        cart[id].quantity--;
+                        updateCart();
+                    }
+                })
+            );
+    
+            document.querySelectorAll(".remove-item").forEach(button =>
+                button.addEventListener("click", (e) => {
+                    const id = e.target.dataset.id;
+                    delete cart[id];
+                    updateCart();
+                })
+            );
+        }
+    
+        function updateCart() {
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+    
+        renderCart();
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 <strong>Fashion Store</strong>. All rights reserved.</p>
+                <p>Your one-stop shop for the latest fashion trends.</p>
+            </div>
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.facebook.com/" aria-label="Visit us on Facebook">
+                        <img src="icons/facebook.svg" alt="Facebook Icon"> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" aria-label="Visit us on Instagram">
+                        <img src="icons/instagram.svg" alt="Instagram Icon"> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/?lang=en" aria-label="Visit us on Twitter">
+                        <img src="icons/twitter.svg" alt="Twitter Icon"> Twitter
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+    <style>
+        /* General Footer Styles */
+        footer {
+            background-color: #333; /* Dark background for contrast */
+            color: #fff; /* White text for readability */
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Footer Info Section */
+        .footer-info {
+            flex: 1;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .footer-info strong {
+            color: #ffcc00; /* Highlight brand name */
+        }
+
+        /* Social Links Section */
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-links li {
+            display: inline-block;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffcc00; /* Hover color */
+        }
+
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 15px 5px;
+            }
+
+            .footer-info p {
+                font-size: 0.8rem;
+            }
+
+            .social-links a {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</body>
+</html>

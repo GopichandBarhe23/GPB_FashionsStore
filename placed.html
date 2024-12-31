@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7f50, #ff6347);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .success-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .success-container h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .order-details {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .order-details p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .order-details span {
+            font-weight: bold;
+        }
+
+        .cta-btn {
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn:focus {
+            outline: 2px solid #007bff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .success-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .success-container h2 {
+                font-size: 22px;
+            }
+
+            .cta-btn {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h2>Thank You for Your Purchase!</h2>
+        <div class="order-details">
+            <p>Your payment was successful.</p>
+            
+            <p>Date: <span>December 28, 2024</span></p>
+        </div>
+        
+        <p>Or <a href="index1.html" class="cta-btn" style="background-color: #007bff;">Continue Shopping</a></p>
+    </div>
+
+    <script>
+        // Optionally, you can add some functionality like a popup message or auto-redirect.
+        setTimeout(function() {
+            alert('Thank you for your purchase! Check your email for confirmation.');
+        }, 3000); // This will display after 3 seconds.
+    </script>
+</body>
+</html>

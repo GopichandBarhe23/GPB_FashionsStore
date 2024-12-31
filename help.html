@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store - Home</title>
+    <link rel="stylesheet" href="help.css">
+    <style>
+        /* General styling for the navigation bar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333; /* Dark background */
+            color: white;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Highlight on hover */
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #444;
+                padding: 10px 0;
+                z-index: 10;
+            }
+
+            nav ul.show {
+                display: flex; /* Display links when toggled */
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger menu on small screens */
+            }
+        }
+    </style>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav aria-label="Main Navigation">
+        <div class="logo">FashionStore</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index1.html" class="active">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="offer.html">Offer Zone</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pp.html">Privacy Policy</a></li>
+            <li><a href="help.html">Help Centre</a></li>
+            <li><a href="signup.html">Sign-up</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Function to toggle the navigation menu on small screens
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+
+    <main>
+        <section class="help-section">
+            <h2>How Can We Help You?</h2>
+            <div class="help-articles">
+                <article class="help-item" onclick="toggleAnswer('order-tracking')">
+                    <h3>Order Tracking</h3>
+                    <p id="order-tracking" class="help-answer">To track your order, simply go to the "Orders" section in your account or click on the tracking link provided in your order confirmation email.</p>
+                </article>
+
+                <article class="help-item" onclick="toggleAnswer('returns-exchanges')">
+                    <h3>Returns and Exchanges</h3>
+                    <p id="returns-exchanges" class="help-answer">We offer a 30-day return policy for unworn, unwashed items. Please visit our returns page for more details.</p>
+                </article>
+
+                <article class="help-item" onclick="toggleAnswer('shipping-info')">
+                    <h3>Shipping Information</h3>
+                    <p id="shipping-info" class="help-answer">We offer free shipping on orders over $50. Shipping times vary depending on your location, but typically range from 3-5 business days.</p>
+                </article>
+
+                <article class="help-item" onclick="toggleAnswer('payment-methods')">
+                    <h3>Payment Methods</h3>
+                    <p id="payment-methods" class="help-answer">We accept all major credit cards, PayPal, and Apple Pay. Payment is processed securely through our checkout page.</p>
+                </article>
+
+                <article class="help-item" onclick="toggleAnswer('size-guide')">
+                    <h3>Size Guide</h3>
+                    <p id="size-guide" class="help-answer">For accurate sizing, please refer to our size chart on each product page. If you're unsure, feel free to contact us for assistance.</p>
+                </article>
+
+                <article class="help-item" onclick="toggleAnswer('account-settings')">
+                    <h3>Account Settings</h3>
+                    <p id="account-settings" class="help-answer">To update your account settings, log into your account and go to the "Settings" section. Here, you can change your email, password, and preferences.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <h3>How do I make a purchase?</h3>
+                <p>Simply add items to your cart, proceed to checkout, and fill in the necessary details to complete your purchase. If you need assistance, visit our customer support page.</p>
+            </div>
+            <div class="faq">
+                <h3>Can I cancel my order?</h3>
+                <p>Orders can be canceled within 24 hours of placement. After that, they are processed for shipment, and cancellation is no longer possible.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 <strong>Fashion Store</strong>. All rights reserved.</p>
+                <p>Your one-stop shop for the latest fashion trends.</p>
+            </div>
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.facebook.com/" aria-label="Visit us on Facebook">
+                        <img src="icons/facebook.svg" alt="Facebook Icon"> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" aria-label="Visit us on Instagram">
+                        <img src="icons/instagram.svg" alt="Instagram Icon"> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/?lang=en" aria-label="Visit us on Twitter">
+                        <img src="icons/twitter.svg" alt="Twitter Icon"> Twitter
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+    <style>
+        /* General Footer Styles */
+        footer {
+            background-color: #333; /* Dark background for contrast */
+            color: #fff; /* White text for readability */
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Footer Info Section */
+        .footer-info {
+            flex: 1;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .footer-info strong {
+            color: #ffcc00; /* Highlight brand name */
+        }
+        
+        /* Social Links Section */
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .social-links li {
+            display: inline-block;
+        }
+        
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ffcc00; /* Hover color */
+        }
+        
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .footer-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+        
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            footer {
+                padding: 15px 5px;
+            }
+        
+            .footer-info p {
+                font-size: 0.8rem;
+            }
+        
+            .social-links a {
+                font-size: 0.8rem;
+            }
+        }
+        </style>
+
+    <script src="help.js"></script>
+</body>
+
+</html>

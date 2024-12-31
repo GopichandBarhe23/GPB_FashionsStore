@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Clothing Store - Home</title>
+    <link rel="stylesheet" href="homepage.css">
+    <style>
+        /* General styling for the navigation bar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333; /* Dark background */
+            color: white;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Highlight on hover */
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #444;
+                padding: 10px 0;
+                z-index: 10;
+            }
+
+            nav ul.show {
+                display: flex; /* Display links when toggled */
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger menu on small screens */
+            }
+        }
+    </style>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav aria-label="Main Navigation">
+        <div class="logo">FashionStore</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="offer.html">Offer Zone</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pp.html">Privacy Policy</a></li>
+            <li><a href="help.html">Help Centre</a></li>
+            <li><a href="signup.html">Sign-up</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Function to toggle the navigation menu on small screens
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+</head>
+<body>
+
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>BRANDED Collection </h1>
+        <p>Exclusive fashion styles for all season at unbeatable prices!</p>
+        <button style="text-decoration:none"><a href="shop.html"class="active">Shop Now</a></button>
+        <button><a href="signup.html"class="active">Sign Up</a></button>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <span class="category">
+            <h2>Men's Wear</h2>
+            <span class="subcategories">
+                <img src="https://dennison.in/cdn/shop/files/mobile_shopify_693_x_720_px_4.png?v=1704886465&width=1386"width="100%">
+                <span class="subcategory"id="mens">
+                    <a href="menscollection.html">Shirts</a>
+                </span>
+                <span class="subcategory">
+                    <a href="menscollection.html">T-Shirts</a>
+                </span>
+                <span class="subcategory">
+                    <a href="menscollection.html">Jackets</a>
+                </span>
+                <span class="subcategory">
+                    <a href="menscollection.html">Jeans</a>
+                </span>
+            </span>
+        </span>
+        <span class="category">
+            <h2>Women's Wear</h2>
+            <span class="subcategories">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTnym-TxbK9Lk8m4Wsk8j37ebVBfED7TqY2A&s"width=100%>
+                <span class="subcategory">
+                    <a href="ladiescollection.html">Tops</a>
+                    
+                </span>
+                <span class="subcategory">
+                    <a href="ladiescollection.html">Dresses</a>
+                </span>
+                <span class="subcategory">
+                    <a href="ladiescollection.html">Skirts</a>
+                </span>
+                <span class="subcategory">
+                    <a href="ladiescollection.html">Pants</a>
+                </span>
+            </span>
+        </span>
+        <span class="category">
+            <h2>Children's Wear</h2>
+            <span class="subcategories">
+                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/bf7995211741657.Y3JvcCw0MzE0LDMzNzUsODQzLDA.jpg"width="100%">
+                <span class="subcategory">
+                    <a href="menscollection.html">Shirts</a>
+                    
+                </span>
+                <span class="subcategory">
+                    <a href="menscollection.html">T-Shirts</a>
+                </span>
+                <span class="subcategory">
+                    <a href="menscollection.html">Dresses</a>
+                </span>
+                <span class="subcategory">
+                    <a href="menscollection.html">Shorts</a>
+                </span>
+            </span>
+        </span>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products">
+        <h2 class="products-title">Featured Products</h2>
+        <div class="product" data-id="1" data-name="Men's Casual Shirt" data-price="39.99" data-image="https://images.meesho.com/images/products/390470344/b58mo_512.webp">
+            <img src="https://images.meesho.com/images/products/390470344/b58mo_512.webp" alt="Men's Casual Shirt">
+            <h3>Men's Casual Shirt</h3>
+            <p>Price: $39.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="2" data-name="Women's Summer Dress" data-price="49.99" data-image="https://cdn.shopify.com/s/files/1/0600/0672/7879/files/1500-x-1500.webp?v=1725621072">
+            <img src="https://cdn.shopify.com/s/files/1/0600/0672/7879/files/1500-x-1500.webp?v=1725621072" alt="Women's Summer Dress">
+            <h3>Women's Summer Dress</h3>
+            <p>Price: $49.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="3" data-name="Children's T-Shirt" data-price="19.99" data-image="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/8/14/764a5b50-4da3-455f-abab-5efe3347d3511692004116109-sak.jpg">
+            <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/8/14/764a5b50-4da3-455f-abab-5efe3347d3511692004116109-sak.jpg" alt="Children's T-Shirt">
+            <h3>Children's T-Shirt</h3>
+            <p>Price: $19.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" data-id="4" data-name="Leather Jacket" data-price="89.99" data-image="https://s.alicdn.com/@sc04/kf/A38d51c508764410090fc3adb7fcab0caX.png">
+            <img src="https://s.alicdn.com/@sc04/kf/A38d51c508764410090fc3adb7fcab0caX.png" alt="Leather Jacket">
+            <h3>Leather Jacket</h3>
+            <p>Price: $89.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+     
+        <a href="cart.html"class="cart-link"><button>Go To Cart</button> </a>
+    </section>
+    
+
+   
+    <script>
+        // Check sign-up status
+        const isSignedUp = JSON.parse(localStorage.getItem("isSignedUp")) || false;
+
+        // Handle add to cart button clicks
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", (e) => {
+                if (!isSignedUp) {
+                    alert("Please sign up before adding items to the cart.");
+                    window.location.href = "signup.html";
+                    return;
+                }
+
+                const productElement = e.target.closest(".product");
+                const id = productElement.dataset.id;
+                const name = productElement.dataset.name;
+                const price = parseFloat(productElement.dataset.price);
+                const image = productElement.dataset.image;
+
+                const cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+                if (!cart[id]) {
+                    cart[id] = { id, name, price, image, quantity: 1 };
+                } else {
+                    cart[id].quantity++;
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+                alert(`${name} added to cart!`);
+            });
+        });
+
+        // Mock sign-up logic
+        localStorage.setItem("isSignedUp", JSON.stringify(false)); // Set this to true after user signs up
+    </script>
+</body>
+</html>

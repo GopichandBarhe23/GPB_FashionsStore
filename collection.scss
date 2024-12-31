@@ -1,0 +1,402 @@
+// Variables
+$primary-color: #4CAF50;
+$secondary-color: #fff;
+$dark-color: #333;
+$light-gray: #f4f4f4;
+$button-hover: #45a049;
+
+// Basic reset and box-sizing
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Body Styling
+body {
+    font-family: Arial, sans-serif;
+    background-color: $light-gray;
+    color: $dark-color;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: $dark-color;
+    color: $secondary-color;
+    padding: 20px 0;
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+
+        li {
+            margin-left: 20px;
+
+            a {
+                color: $secondary-color;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 5px;
+
+                &:hover, &:focus {
+                    color: $primary-color;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: $dark-color url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .hero-text {
+        color: $secondary-color;
+        h2 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: $secondary-color;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+
+            &:hover {
+                background-color: $button-hover;
+            }
+        }
+    }
+}
+
+/* Product Grid */
+.collection {
+    padding: 40px 10px;
+    background-color: $secondary-color;
+    text-align: center;
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        .product {
+            background-color: $secondary-color;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 calc(33.33% - 40px);
+            margin: 10px;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                max-height: 300px;
+            }
+
+            h3 {
+                font-size: 22px;
+                margin: 10px 0;
+            }
+
+            p {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .add-to-cart {
+                background-color: $primary-color;
+                color: $secondary-color;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $button-hover;
+                }
+
+                &:focus {
+                    background-color: darken($primary-color, 10%);
+                    border: 2px solid $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row */
+    }
+
+    .hero-text h2 {
+        font-size: 30px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        flex: 1 1 100%; /* 1 item per row */
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .nav-links li {
+        font-size: 14px;
+    }
+}
+
+
+//ladies collection
+
+// Variables
+$primary-color: #FF6347;
+$secondary-color: #fff;
+$dark-color: #333;
+$light-gray: #f8f8f8;
+$button-hover: #e55347;
+
+// Basic reset and box-sizing
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Body Styling
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $light-gray;
+    color: $dark-color;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: $dark-color;
+    color: $secondary-color;
+    padding: 20px 0;
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+
+        li {
+            margin-left: 20px;
+
+            a {
+                color: $secondary-color;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 5px;
+
+                &:hover, &:focus {
+                    color: $primary-color;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: $dark-color url('https://img.freepik.com/premium-psd/fashion-sales-social-media-facebook-cover-webinar-design_671392-886.jpg?semt=ais_hybrid') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .hero-text {
+        color: $secondary-color;
+        h2 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: $secondary-color;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+
+            &:hover {
+                background-color: $button-hover;
+            }
+        }
+    }
+}
+
+/* Product Grid */
+.collection {
+    padding: 40px 10px;
+    background-color: $secondary-color;
+    text-align: center;
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        .product {
+            background-color: $secondary-color;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1 1 calc(33.33% - 40px);
+            margin: 10px;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                max-height: 300px;
+            }
+
+            h3 {
+                font-size: 22px;
+                margin: 10px 0;
+            }
+
+            p {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .add-to-cart {
+                background-color: $primary-color;
+                color: $secondary-color;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $button-hover;
+                }
+
+                &:focus {
+                    background-color: darken($primary-color, 10%);
+                    border: 2px solid $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row */
+    }
+
+    .hero-text h2 {
+        font-size: 30px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        flex: 1 1 100%; /* 1 item per row */
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .nav-links li {
+        font-size: 14px;
+    }
+}

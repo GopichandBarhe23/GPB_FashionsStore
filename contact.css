@@ -1,0 +1,136 @@
+nav {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.contact .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contact p {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 50px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none; /* Removes default outline */
+}
+
+/* Submit Button */
+button.submit-btn {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.4em;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+button.submit-btn:active {
+    background-color: #1c6fa6; /* Darker blue when button is pressed */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact h2 {
+        font-size: 2.8em; /* Slightly smaller font for mobile screens */
+    }
+
+    .contact p {
+        font-size: 1.2em; /* Adjusted paragraph text size */
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Less margin on mobile */
+    }
+
+    input, textarea {
+        font-size: 1.1em; /* Slightly smaller text for inputs */
+        padding: 12px; /* Adjust padding for smaller screens */
+    }
+
+    button.submit-btn {
+        font-size: 1.2em; /* Slightly smaller button text */
+    }
+}

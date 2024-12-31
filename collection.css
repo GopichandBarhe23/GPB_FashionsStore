@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+.navbar .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+}
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.navbar .nav-links li a:hover, .navbar .nav-links li a:focus {
+  color: #4CAF50;
+  background-color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: #333 url("https://via.placeholder.com/1200x600") no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero .hero-text {
+  color: #fff;
+}
+.hero .hero-text h2 {
+  font-size: 40px;
+}
+.hero .hero-text p {
+  font-size: 18px;
+}
+.hero .hero-text .btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.hero .hero-text .btn:hover {
+  background-color: #45a049;
+}
+
+/* Product Grid */
+.collection {
+  padding: 40px 10px;
+  background-color: #fff;
+  text-align: center;
+}
+.collection h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.collection .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.collection .product-grid .product {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 calc(33.33% - 40px);
+  margin: 10px;
+}
+.collection .product-grid .product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 300px;
+}
+.collection .product-grid .product h3 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.collection .product-grid .product p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.collection .product-grid .product .add-to-cart {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.collection .product-grid .product .add-to-cart:hover {
+  background-color: #45a049;
+}
+.collection .product-grid .product .add-to-cart:focus {
+  background-color: #3d8b40;
+  border: 2px solid #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  }
+  .hero-text h2 {
+    font-size: 30px;
+  }
+  .hero-text p {
+    font-size: 16px;
+  }
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 480px) {
+  .product {
+    flex: 1 1 100%; /* 1 item per row */
+  }
+  .hero-text h2 {
+    font-size: 24px;
+  }
+  .hero-text p {
+    font-size: 14px;
+  }
+  .nav-links li {
+    font-size: 14px;
+  }
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+.navbar .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+}
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.navbar .nav-links li a:hover, .navbar .nav-links li a:focus {
+  color: #FF6347;
+  background-color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: #333 url("https://img.freepik.com/premium-psd/fashion-sales-social-media-facebook-cover-webinar-design_671392-886.jpg?semt=ais_hybrid") no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero .hero-text {
+  color: #fff;
+}
+.hero .hero-text h2 {
+  font-size: 40px;
+}
+.hero .hero-text p {
+  font-size: 18px;
+}
+.hero .hero-text .btn {
+  padding: 10px 20px;
+  background-color: #FF6347;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.hero .hero-text .btn:hover {
+  background-color: #e55347;
+}
+
+/* Product Grid */
+.collection {
+  padding: 40px 10px;
+  background-color: #fff;
+  text-align: center;
+}
+.collection h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.collection .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.collection .product-grid .product {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 calc(33.33% - 40px);
+  margin: 10px;
+}
+.collection .product-grid .product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 300px;
+}
+.collection .product-grid .product h3 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.collection .product-grid .product p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.collection .product-grid .product .add-to-cart {
+  background-color: #FF6347;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.collection .product-grid .product .add-to-cart:hover {
+  background-color: #e55347;
+}
+.collection .product-grid .product .add-to-cart:focus {
+  background-color: #ff3814;
+  border: 2px solid #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  }
+  .hero-text h2 {
+    font-size: 30px;
+  }
+  .hero-text p {
+    font-size: 16px;
+  }
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 480px) {
+  .product {
+    flex: 1 1 100%; /* 1 item per row */
+  }
+  .hero-text h2 {
+    font-size: 24px;
+  }
+  .hero-text p {
+    font-size: 14px;
+  }
+  .nav-links li {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=collection.css.map */

@@ -1,0 +1,106 @@
+/* Main Content */
+main {
+    padding: 40px;
+}
+
+/* Help and FAQ Section Heading */
+.help-section h2,
+.faq-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center the headings */
+}
+
+/* Help Articles */
+.help-articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around; /* Better alignment */
+}
+
+.help-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.help-item:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.help-item h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.help-answer {
+    display: none;
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.help-item.active .help-answer {
+    display: block; /* Toggle visibility */
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.faq p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Adjust Heading Font Sizes for Mobile */
+    .help-section h2,
+    .faq-section h2 {
+        font-size: 24px;
+    }
+
+    /* Adjust Help Articles Layout for Small Screens */
+    .help-articles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .help-item {
+        min-width: 90%; /* Take up more space on mobile */
+        margin-bottom: 20px; /* Add space between help items */
+    }
+}

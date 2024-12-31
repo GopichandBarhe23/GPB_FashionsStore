@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Fashion Store</title>
+    <link rek="stylesheet"href="shop.css">
+    <style>
+        /* General styling for the navigation bar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333; /* Dark background */
+            color: white;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Highlight on hover */
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #444;
+                padding: 10px 0;
+                z-index: 10;
+            }
+
+            nav ul.show {
+                display: flex; /* Display links when toggled */
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger menu on small screens */
+            }
+        }
+    </style>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav aria-label="Main Navigation">
+        <div class="logo">FashionStore</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index1.html" class="active">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="offer.html">Offer Zone</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pp.html">Privacy Policy</a></li>
+            <li><a href="help.html">Help Centre</a></li>
+            <li><a href="signup.html">Sign-up</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Function to toggle the navigation menu on small screens
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .shop-container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            width: 250px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .product button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #555;
+        }
+
+        h3 {
+            text-align: center;
+            width: 100%;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .button-container {
+            text-align: center;
+          }
+        .buy-now-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            background-color: #ff6f61;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+          
+          .buy-now-button:hover {
+            background-color: #e65550;
+            transform: translateY(-2px);
+          }
+          
+          .buy-now-button:active {
+            background-color: #d0443f;
+            transform: translateY(1px);
+          }
+    </style>
+</head>
+<body>
+   
+    <div class="shop-container">
+        <h3>Mens Collection</h3>
+        <div class="product" id="product1">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/c/j/g/xxl-frml-st25-vebnor-original-imah7eajdartnpw7.jpeg?q=70" alt="Product 1">
+            <h3>VEBNOR</h3>
+            <p>Price: ₹200</p>
+            <button onclick="addToCart('VEBNOR','VEBNOR', 200, )">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product2">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/u/w/r/s-ts36-vebnor-original-imah74ddfgtkzfhe.jpeg?q=70" alt="Product 2">
+            <h3>Men Solid Polo Neck Polyester Dark Blue T-Shirt</h3>
+            <p>Price: ₹459</p>
+            <button onclick="addToCart('Men Solid Polo Neck Polyester Dark Blue T-Shirt', 'Men Solid Polo Neck Polyester Dark Blue T-Shirt',459, 'images/product2.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product3">
+            <img src="https://rukminim2.flixcart.com/image/300/300/xif0q/t-shirt/i/c/o/s-bul-24bhf154-bullmer-original-imah4zsavzebyf9s.jpeg?q=90" alt="Product 3">
+            <h3>Men Striped Polo Neck Cotton Blend Blue T-Shirt</h3>
+            <p>Price: ₹500</p>
+            <button onclick="addToCart('Men Striped Polo Neck Cotton Blend Blue T-Shirt', 'Men Striped Polo Neck Cotton Blend Blue T-Shirt 3', 500, 'images/product3.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product4">
+            <img src="https://rukminim2.flixcart.com/image/300/300/xif0q/t-shirt/i/q/j/m-fs198-0-shirt-wine-force-original-imah5h3fkkxggq7n.jpeg?q=90" alt="Product 4">
+            <h3>Men Self Design Mandarin Collar Polyester Purple T-Shirt
+                </h3>
+            <p>Price: ₹699</p>
+            <button onclick="addToCart('Men Self Design Mandarin Collar Polyester Purple T-Shirt', 'Men Self Design Mandarin Collar Polyester Purple T-Shirtt 4', 699, 'images/product2.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product5">
+            <img src="https://images.meesho.com/images/products/445301333/3hjws_512.webp" alt="Product 5">
+            <h3>Men Solid Round Neck Polyester Grey T-Shirt</h3>
+            <p>Price: ₹399</p>
+            <button onclick="addToCart('Men Solid Round Neck Polyester Grey T-Shirt', 'Men Solid Round Neck Polyester Grey T-Shirt ', 399, 'images/product2.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product6">
+            <img src="https://rukminim2.flixcart.com/image/300/300/kx3l0nk0/shirt/q/2/u/40-14878076-roadster-original-imag9mg49wqfukrc.jpeg?q=90" alt="Product 6">
+            <h3>Men Regular Fit Solid Casual Shirt</h3>
+            <p>Price: ₹429</p>
+            <button onclick="addToCart('Men Regular Fit Solid Casual Shirt', 'Men Regular Fit Solid Casual Shirt', 429, 'images/product2.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+
+        <h3>Ladies Collection</h3>
+        <div class="product" id="product7">
+            <img src="https://images.meesho.com/images/products/388359920/puozy_400.webp" alt="Product 7">
+            <h3>NEW FANCY VELVET DRESS</h3>
+            <p>Price: ₹799</p>
+            <button onclick="addToCart('NEW FANCY VELVET DRESS', 'NEW FANCY VELVET DRESS', 799, 'images/product1.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product8">
+            <img src="https://images.meesho.com/images/products/199202417/ryxwj_400.webp" alt="Product 8">
+            <h3>WESTERN DRESS</h3>
+            <p>Price: ₹590</p>
+            <button onclick="addToCart('WESTERN DRESS', 'WESTERN DRESS', 590, 'images/product2.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product9">
+            <img src="https://rukminim2.flixcart.com/image/300/300/xif0q/ethnic-set/y/b/t/xl-hpuvyzwszc-gosriki-original-imahy9kraxh3qcvt.jpeg?q=90" alt="Product 9">
+            <h3>Women Cotton Blend Kurta Pant Dupatta Set</h3>
+            <p>Price: ₹999</p>
+            <button onclick="addToCart('Women Cotton Blend Kurta Pant Dupatta Set', 'Women Cotton Blend Kurta Pant Dupatta Set', 999, 'images/product3.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product10">
+            <img src="https://rukminim2.flixcart.com/image/300/300/xif0q/ethnic-set/k/t/r/s-varsha-yellow-nm-nermosa-original-imah3qyg87gndn2h.jpeg?q=90" alt="Product 10">
+            <h3>Women Viscose Rayon Kurta Pant Dupatta Set
+            </h3>
+            <p>Price: ₹869</p>
+            <button onclick="addToCart('Women Viscose Rayon Kurta Pant Dupatta Set', 'Women Viscose Rayon Kurta Pant Dupatta Set', 869, 'images/product3.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product11">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/h/x/0/4xl-nakari-cream-gosriki-original-imagzh8yzsz5qymh.jpeg?q=70" alt="Product 6">
+            <h3>Women Cotton Blend Kurti Pant Set</h3>
+            <p>Price: ₹587</p>
+            <button onclick="addToCart('Women Cotton Blend Kurti Pant Set', 'Women Cotton Blend Kurti Pant Set', 587, 'images/product3.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <div class="product" id="product12">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/1/e/4/s-pink-yoke-straight-kurti-prisca-original-imah4u6guubn9zwx.jpeg?q=70" alt="Product 6">
+            <h3>Women Floral Print Viscose Rayon Straight Kurta  (Pink, White)</h3>
+            <p>Price: ₹478</p>
+            <button onclick="addToCart('Women Floral Print Viscose Rayon Straight Kurta  (Pink, White)', 'Women Floral Print Viscose Rayon Straight Kurta  (Pink, White)', 478, 'images/product3.jpg')">Add to Cart</button>
+            <div class="button-container">
+                <a href="payment.html" class="buy-now-button">Buy Now</a>
+              </div>
+        </div>
+        <a href="cart.html"class="cart-link"><button>Go To Cart</button> </a>
+    </div>
+    
+    <script>
+        function addToCart(id, name, price,image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+            // Check if the product already exists in the cart
+            if (cart[id]) {
+                cart[id].quantity += 1; // Increase quantity
+            } else {
+                cart[id] = { id, name, price,image,  quantity: 1 };
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} has been added to your cart!`);
+        }
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 <strong>Fashion Store</strong>. All rights reserved.</p>
+                <p>Your one-stop shop for the latest fashion trends.</p>
+            </div>
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.facebook.com/" aria-label="Visit us on Facebook">
+                        <img src="icons/facebook.svg" alt="Facebook Icon"> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" aria-label="Visit us on Instagram">
+                        <img src="icons/instagram.svg" alt="Instagram Icon"> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/?lang=en" aria-label="Visit us on Twitter">
+                        <img src="icons/twitter.svg" alt="Twitter Icon"> Twitter
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+    <style>
+        /* General Footer Styles */
+        footer {
+            background-color: #333; /* Dark background for contrast */
+            color: #fff; /* White text for readability */
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Footer Info Section */
+        .footer-info {
+            flex: 1;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .footer-info strong {
+            color: #ffcc00; /* Highlight brand name */
+        }
+        
+        /* Social Links Section */
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .social-links li {
+            display: inline-block;
+        }
+        
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ffcc00; /* Hover color */
+        }
+        
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .footer-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+        
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            footer {
+                padding: 15px 5px;
+            }
+        
+            .footer-info p {
+                font-size: 0.8rem;
+            }
+        
+            .social-links a {
+                font-size: 0.8rem;
+            }
+        }
+        </style>
+</body>
+</html>

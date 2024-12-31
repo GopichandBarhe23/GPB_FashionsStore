@@ -1,0 +1,134 @@
+/* Blog Section */
+nav {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.blog {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.blog h2 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 50px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Blog Posts Wrapper */
+.blog-posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0 50px;
+}
+
+/* Individual Blog Post */
+.blog-post {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+}
+
+/* Blog Post Image */
+.blog-post img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Blog Content Section */
+.blog-content {
+    padding: 30px;
+}
+
+.blog-content h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.blog-content p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.blog-content .date {
+    color: #888;
+    font-size: 1em;
+}
+
+.blog-content a {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.blog-content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .blog-posts {
+        margin: 0 20px; /* Reduced margin */
+        justify-content: center; /* Center posts on smaller screens */
+    }
+
+    .blog-post {
+        width: 100%; /* Stacks the blog posts vertically */
+        margin-bottom: 30px; /* Adds space between stacked posts */
+    }
+
+    .blog h2 {
+        font-size: 2.5em; /* Slightly smaller font size for smaller screens */
+        margin-bottom: 40px;
+    }
+
+    .blog-content h3 {
+        font-size: 1.8em; /* Slightly smaller heading size */
+    }
+
+    .blog-content p {
+        font-size: 1.1em; /* Adjusts text size for readability */
+    }
+}

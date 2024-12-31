@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Spectacles Store</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General styling for the navigation bar */
+        nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 20px;
+          background-color: #333; /* Adjust color */
+          color: white;
+        }
+      
+        nav .logo {
+          font-size: 1.5em;
+          font-weight: bold;
+        }
+      
+        nav ul {
+          list-style: none;
+          display: flex;
+          gap: 15px;
+          margin: 0;
+          padding: 0;
+        }
+      
+        nav ul li {
+          display: inline-block;
+        }
+      
+        nav ul li a {
+          text-decoration: none;
+          color: white;
+          padding: 5px 10px;
+        }
+      
+        nav ul li a.active {
+          background-color: #555; /* Highlight for active link */
+          border-radius: 5px;
+        }
+      
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+          nav {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+      
+          nav ul {
+            display: block;
+            max-height: 150px; /* Adjust height as needed */
+            overflow-y: auto; /* Adds scrollbar for overflow */
+            width: 100%;
+            padding: 10px 0;
+            background-color: #444; /* Background for dropdown */
+          }
+      
+          nav ul li {
+            display: block;
+            margin-bottom: 10px;
+          }
+      
+          nav ul li a {
+            display: block;
+            width: 100%;
+          }
+        }
+      </style>
+      
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            const products = {
+                1: {
+                    name: "Product Name 1",
+                    price: "₹99.99",
+                    images: ["images/product1.jpg", "images/product1-1.jpg"],
+                    description: "Description for Product 1"
+                },
+                2: {
+                    name: "Product Name 2",
+                    price: "₹89.99",
+                    images: ["images/product2.jpg", "images/product2-1.jpg"],
+                    description: "Description for Product 2"
+                }
+                // Add more products similarly
+            };
+
+            const product = products[productId];
+            if (product) {
+                document.getElementById("product-name").textContent = product.name;
+                document.getElementById("product-price").textContent = product.price;
+                document.getElementById("product-description").textContent = product.description;
+                document.getElementById("main-image").src = product.images[0];
+
+                const thumbnails = document.querySelector(".thumbnail-images");
+                thumbnails.innerHTML = "";
+                product.images.forEach(image => {
+                    const img = document.createElement("img");
+                    img.src = image;
+                    img.alt = "Product Thumbnail";
+                    img.onclick = () => changeImage(image);
+                    thumbnails.appendChild(img);
+                });
+            }
+
+            document.querySelector(".add-to-cart").onclick = function() {
+                window.location.href = "cart.html";
+            };
+        });
+
+        function changeImage(src) {
+            document.getElementById("main-image").src = src;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FashionStore</div>
+            <ul>
+                <li><a href="index1.html"class="active">Home</a></li>
+                <li><a href="shop.html"class="active">Shop</a></li>
+                <li><a href="offer.html"class="active">Offer Zone</a></li>
+                <li><a href="blog.html"class="active">Blog</a></li>
+                <li><a href="testimonial.html"class="active">Testimonials</a></li>
+                <li><a href="cart.html"class="active">Cart</a></li>
+                <li><a href="about.html"class="active">About Us</a></li>
+                <li><a href="contact.html"class="active">Contact</a></li>
+                <li><a href="pp.html"class="active">Privacy Policy</a></li>
+                <li><a href="help.html"class="active">Help Centre</a></li>
+                <li><a href="login.html"class="active">Login</a></li>
+    
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <div class="product-images">
+                <img src="shopimages/men img3.webp" alt="Product Image" id="main-image">
+                <div class="thumbnail-images">
+                    <!-- Thumbnails will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="product-info">
+                <h1 id="product-name">Men Slim Fit Checkered Casual Shirt</h1>
+                <p class="price" id="product-price">₹879</p>
+                <p id="product-description">PUMA BRAND</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 <strong>Fashion Store</strong>. All rights reserved.</p>
+                <p>Your one-stop shop for the latest fashion trends.</p>
+            </div>
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.facebook.com/" aria-label="Visit us on Facebook">
+                        <img src="icons/facebook.svg" alt="Facebook Icon"> Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" aria-label="Visit us on Instagram">
+                        <img src="icons/instagram.svg" alt="Instagram Icon"> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/?lang=en" aria-label="Visit us on Twitter">
+                        <img src="icons/twitter.svg" alt="Twitter Icon"> Twitter
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+    <style>
+        /* General Footer Styles */
+        footer {
+            background-color: #333; /* Dark background for contrast */
+            color: #fff; /* White text for readability */
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Footer Info Section */
+        .footer-info {
+            flex: 1;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .footer-info strong {
+            color: #ffcc00; /* Highlight brand name */
+        }
+        
+        /* Social Links Section */
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .social-links li {
+            display: inline-block;
+        }
+        
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ffcc00; /* Hover color */
+        }
+        
+        .social-links img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .footer-info {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+        
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            footer {
+                padding: 15px 5px;
+            }
+        
+            .footer-info p {
+                font-size: 0.8rem;
+            }
+        
+            .social-links a {
+                font-size: 0.8rem;
+            }
+        }
+        </style>
+
+</body>
+</html>
